@@ -13,8 +13,8 @@ export class HomeComponent {
 
     this.spotyfy.getNewReleases()
         .subscribe( (data: any) => {
-           console.log(data.albums.items);
-           this.nuevasCanciones = data.albums.items;
+          //  console.log(data.albums.items);
+           this.nuevasCanciones = data;
          });
 
 
