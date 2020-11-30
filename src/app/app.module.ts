@@ -15,6 +15,10 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ROUTES } from './app.rutes';
 import { HttpClientModule } from '@angular/common/http';
 
+// Pipes
+
+import { NoimagePipe } from './pipes/noimage.pipe';
+
 
 
 
@@ -24,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     SearchComponent,
     ArtistaComponent,
-    NavbarComponent
+    NavbarComponent,
+    NoimagePipe
   ],
   imports: [
     HttpClientModule,
