@@ -16,7 +16,7 @@ export class SpotifyService {
     const url: any = `https://api.spotify.com/v1/${ query }`;
 
     const headers = new HttpHeaders({
-      'Authorization' : 'Bearer BQBXjkZF57jWiWT4xf64cilSOHrNRHfBFU1hK1R4clQhyvrjRhDjLXToQg6k4kdB-qMZP6WobYyBvB64oEg'});
+      'Authorization' : 'Bearer BQDJph95MsT8J9yYp6-pF2qjGrr4Fo7J_Hf4AY5G8oB8bRlmlq-eaM2qOytrBX1A1Y-HWq_fsn6LCosFP8c'});
       return this.http.get(url, { headers });
 
   }
@@ -33,7 +33,7 @@ export class SpotifyService {
           //  this.http.get('https://api.spotify.com/v1/browse/new-releases',{ headers }). esto es lo que se simplifico en el getQuery para no repetir tanto codigo.
 
   // tslint:disable-next-line: typedef
-  getArtista( termino: string ) {
+  getArtistas( termino: string ) {
     return this.getQuery(`search?q=${ termino }&type=artist&limit=15`)
                .pipe( map( data => data['artists'].items ));
               }
@@ -41,5 +41,13 @@ export class SpotifyService {
     // this.http.get(`https://api.spotify.com/v1/search?q=${ termino }&type=artist&limit=15`,{ headers } ) esto se resumio en el getQuery .
 
   //             .pipe( map( data =>{return data['artists'].items; })); esta es la misma funcion de arriba
+
+  getArtista( id: string ) {
+    return this.getQuery(`artists/${ id }`)
+              //  .pipe( map( data => data['artists'].items ));
+              }
+
+
+
 
 }
